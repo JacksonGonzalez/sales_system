@@ -2028,10 +2028,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Home',
@@ -6480,7 +6476,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.navbar[data-v-eea9bb48]{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n.navbar div[data-v-eea9bb48] {\n    padding: 10px 20px;\n    margin: 5px;\n}\n", ""]);
+exports.push([module.i, "\n.carousel-caption[data-v-eea9bb48] {\n  bottom: 40%;\n}\nh4[data-v-eea9bb48]{\n  font-size: 450% ;\n}\nh5[data-v-eea9bb48]{\n  font-size: 200% ;\n}\nimg[data-v-eea9bb48]{\n  opacity: 0.2;\n  max-height: 100%;\n}\np[data-v-eea9bb48]{\n  font-size: 120%;\n}\n#fondo[data-v-eea9bb48]{\n  min-height:100%;\n  max-height: 100%;\n  background-size:cover;\n  background-repeat: no-repeat;\n}\n", ""]);
 
 // exports
 
@@ -38357,39 +38353,64 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "navbar" }, [
-        _c(
-          "div",
-          [_c("routerLink", { attrs: { to: "/" } }, [_vm._v("Home")])],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          [_c("routerLink", { attrs: { to: "/login" } }, [_vm._v("Login")])],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          [
-            _c("routerLink", { attrs: { to: "/dashboard" } }, [
-              _vm._v("Dashboard")
-            ])
-          ],
-          1
-        )
-      ]),
+  return _c(
+    "div",
+    {
+      staticClass: "carousel slide",
+      attrs: { id: "fondo", "data-ride": "carousel" }
+    },
+    [
+      _vm._m(0),
       _vm._v(" "),
-      !_vm.loading
-        ? _c("div", [_vm._v("\n            Hola\n        ")])
-        : _c("div", [_c("dashboard")], 1)
-    ])
-  ])
+      _c("div", { staticClass: "carousel-inner" }, [
+        _c("div", { staticClass: "carousel-item active" }, [
+          _c("img", {
+            staticClass: "d-block w-100 h-100",
+            attrs: { src: "img/territorio_ventas.jpg", alt: "..." }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "carousel-caption d-none d-md-block" }, [
+            _c("h4", [_vm._v("SALES SYSTEM")]),
+            _vm._v(" "),
+            _c("h5", [
+              _vm._v("Sistema de Gestion para Venta y Compra de productos")
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "Una plataforma creada para gestionar las compras y ventas de cualquier producto."
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              { staticClass: "btn btn-success" },
+              [
+                _c("routerLink", { attrs: { to: "/login" } }, [
+                  _vm._v("Iniciar Sesion")
+                ])
+              ],
+              1
+            )
+          ])
+        ])
+      ])
+    ]
+  )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ol", { staticClass: "carousel-indicators" }, [
+      _c("li", {
+        staticClass: "active",
+        attrs: { "data-target": "#fondo", "data-slide-to": "0" }
+      })
+    ])
+  }
+]
 render._withStripped = true
 
 
