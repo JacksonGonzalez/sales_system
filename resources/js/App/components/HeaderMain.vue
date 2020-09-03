@@ -31,7 +31,7 @@
                 <a class="c-header-nav-link" href="#"><i class="far fa-list-ul"></i></a>
             </li>
           <li class="c-header-nav-item dropdown"><a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-              <div class="c-avatar"><img class="c-avatar-img" src="https://lh3.googleusercontent.com/proxy/h1S2nqVsUOed_87kqEekQioFRgGjLw8crNqoxJ6b09XD1cl_nS_CwAUsWrC-GAtmKxnS6MPjmTHIRAP0noKMrN66ZEyfYpc1yHUSi2-WF0DBYHlXWKWeKGh3qKUcctuUaTn0gB5e7PYoiJimlDg-Nrro" alt="user@email.com"></div>
+              <div class="c-avatar"><img class="c-avatar-img" src="https://kooledge.com/assets/default_medium_avatar-57d58da4fc778fbd688dcbc4cbc47e14ac79839a9801187e42a796cbd6569847.png" alt="user@email.com"></div>
             </a>
             <div class="dropdown-menu dropdown-menu-right pt-0">
               <div class="dropdown-header bg-light py-2"><strong>Cuenta</strong></div>

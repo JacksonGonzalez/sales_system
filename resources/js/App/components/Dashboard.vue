@@ -226,7 +226,7 @@ import MenuMainVue from './MenuMain.vue';
 import HeaderMainVue from './HeaderMain.vue';
 import FooterMainVue from './FooterMain.vue';
 export default {
-  name: "Dashboard",
+  name: "Panel de Control",
   data() {
     return {
       loading: true,

@@ -90,7 +90,7 @@ export const routes = [
 
     },
     {
-        path : '/reporte-venta',
+        path : '/reporte-ventas',
         component: SaleReport,
 
     },
