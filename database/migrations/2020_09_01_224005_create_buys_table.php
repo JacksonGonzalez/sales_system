@@ -15,7 +15,15 @@ class CreateBuysTable extends Migration
     {
         Schema::create('buys', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('idProduct');
+            $table->unsignedBigInteger('idSupplier');
+            $table->bigInteger('number');
+            $table->dateTime('date_hour');
+            $table->float('total', 10, 2);
             $table->timestamps();
+
+            $table->foreign('idProduct')->references('id')->on('products');
+            $table->foreign('idSupplier')->references('id')->on('suppliers');
         });
     }
 

@@ -15,7 +15,14 @@ class CreateBuyProductTable extends Migration
     {
         Schema::create('buy_product', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('idBuy');
+            $table->unsignedBigInteger('idProduct');
+            $table->bigInteger('quantity');
+            $table->float('buy_price', 10, 2);
             $table->timestamps();
+
+            $table->foreign('idProduct')->references('id')->on('products');
+            $table->foreign('idBuy')->references('id')->on('buys');
         });
     }
 
