@@ -1,0 +1,73 @@
+<template>
+    <div>
+        <header class="c-header c-header-light c-header-fixed c-header-with-subheader">
+        <button class="c-header-toggler c-class-toggler d-lg-none mfe-auto" type="button" data-target="#sidebar" data-class="c-sidebar-show">
+          <!-- <svg class="c-icon c-icon-lg">
+            <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-menu"></use>
+          </svg> -->
+          <i class="fas fa-bars"></i>
+        </button><a class="c-header-brand d-lg-none" href="#">
+          <i class="fas fa-bars"></i>
+          </a>
+        <button class="c-header-toggler c-class-toggler mfs-3 d-md-down-none" type="button" data-target="#sidebar" data-class="c-sidebar-lg-show" responsive="true">
+          <!-- logo habmburguesa -->
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Options menu -->
+        <ul class="c-header-nav d-md-down-none">
+          <li class="c-header-nav-item px-3">{{ nombre }}</li>
+        </ul>
+
+
+        <ul class="c-header-nav ml-auto mr-4">
+            <li class="c-header-nav-item d-md-down-none mx-2">
+                <a class="c-header-nav-link" href="#"><i class="far fa-moon"></i></a>
+            </li>
+            <li class="c-header-nav-item d-md-down-none mx-2">
+                <a class="c-header-nav-link" href="#"><i class="far fa-bell"></i></a>
+            </li>
+            <li class="c-header-nav-item d-md-down-none mx-2">
+                <a class="c-header-nav-link" href="#"><i class="far fa-list-ul"></i></a>
+            </li>
+          <li class="c-header-nav-item dropdown"><a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              <div class="c-avatar"><img class="c-avatar-img" src="https://lh3.googleusercontent.com/proxy/h1S2nqVsUOed_87kqEekQioFRgGjLw8crNqoxJ6b09XD1cl_nS_CwAUsWrC-GAtmKxnS6MPjmTHIRAP0noKMrN66ZEyfYpc1yHUSi2-WF0DBYHlXWKWeKGh3qKUcctuUaTn0gB5e7PYoiJimlDg-Nrro" alt="user@email.com"></div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right pt-0">
+              <div class="dropdown-header bg-light py-2"><strong>Cuenta</strong></div>
+                <a class="dropdown-item" href="#"><i class="far fa-user-circle mr-2"></i> Perfil</a>
+                <a class="dropdown-item" href="#"><i class="far fa-cog mr-2"></i> Configuraciones</a>
+                <a class="dropdown-item" href="#"><i class="far fa-cart-arrow-down mr-2"></i> Compras<span class="badge badge-secondary ml-auto">42</span></a>
+                <a class="dropdown-item" href="#"><i class="far fa-money-bill-wave mr-2"></i> Ventas<span class="badge badge-primary ml-auto">42</span></a>
+              <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#"><i class="far fa-sign-out-alt mr-2"></i> Salir</a>
+            </div>
+          </li>
+        </ul>
+        
+      </header>
+    </div>
+</template>
+<script>
+
+    export default {
+        name: 'HeaderMain',
+        props: {
+            nombre: String
+        },
+        data(){
+            return {
+                
+            }
+        },
+        components:{
+            
+        },
+        mounted() {
+            
+        }
+    }
+</script>
+<style lang="stylus" scoped>
+ 
+</style>
