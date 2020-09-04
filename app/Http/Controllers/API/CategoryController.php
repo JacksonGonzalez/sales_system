@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Category;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CategoryRequest;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -12,9 +14,14 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if($request->has('txtBuscar')){
+            $categories = Category::WHERE('name', 'like', '%'.$request->txtBuscar.'%')->get();
+        }else{
+            $categories = Category::WHERE('state', '=', '1')->get();
+        }
+         return $categories;
     }
 
     /**
@@ -23,9 +30,12 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
-        //
+        $input = $request->all();
+        Category::create($input);
+        return response()->json(['res' => true, 'message' => 'Insert OK', 'category' => $input], 200);
+
     }
 
     /**
@@ -34,9 +44,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Category $category )
     {
-        //
+        return $category;
     }
 
     /**
@@ -46,9 +56,16 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        //
+        $input = $request->validate([
+            'name' => 'required|min:3|string',
+            'description' => 'string',
+            'state' => 'numeric'
+        ]);
+        // $input = $validatedData->all();
+        $category->update($input);
+        return response()->json(['res' => true, 'message' => 'Update OK', 'category' => $category], 200);
     }
 
     /**
@@ -59,6 +76,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::destroy($id);
+        return response()->json(['res' => true, 'message' => 'Delete OK'], 200);
     }
 }
