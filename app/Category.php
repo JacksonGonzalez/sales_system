@@ -12,4 +12,9 @@ class Category extends Model
         'name', 'description', 'state', 'created_at', 'updated_at',
     ];
 
+    public function products()
+    {
+        return $this->hasMany('App\Product');
+    }
+
 }
