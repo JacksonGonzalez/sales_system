@@ -18,10 +18,10 @@ class CreateSuppliersTable extends Migration
             $table->string('name');
             $table->string('document_type', 3);
             $table->float('document_number', 10, 0);
-            $table->string('address');
-            $table->float('phone', 10, 0);
-            $table->string('email');
-            $table->string('contact');
+            $table->string('address')->nullable();
+            $table->float('phone', 10, 0)->nullable();
+            $table->string('email')->nullable();
+            $table->string('contact')->nullable();
             $table->timestamps();
         });
     }

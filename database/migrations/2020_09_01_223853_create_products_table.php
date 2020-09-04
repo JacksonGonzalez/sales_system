@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('idCategory');
             $table->float('sale_price', 10, 2);
             $table->integer('stock');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->char('state', 1)->default('1');
             $table->timestamps();
 

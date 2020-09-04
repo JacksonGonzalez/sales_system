@@ -20,16 +20,18 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group([// 'middleware' => 'api', // 'prefix' => 'auth',
     'namespace' => 'api'], function () {
 
-    // Route::post('login', 'AuthController@login');
-    // Route::post('logout', 'AuthController@logout');
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('register', 'AuthController@register');
     // Route::post('refresh', 'AuthController@refresh');
-    // Route::post('checkToken', 'AuthController@checkToken');
+    Route::post('checkToken', 'AuthController@checkToken');
     // Route::post('admin', 'AdminController@index');
-    // Route::resource('categories', 'CategoryController');
+    Route::post('users', 'UserController@store');
 
 });
 
-Route::group([// 'middleware' => 'api', // 
+Route::group([// 
+    'middleware' => 'auth:api', // 
     'prefix' => 'admin',
     'namespace' => 'api'], function () {
 
