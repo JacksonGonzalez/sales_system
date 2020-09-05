@@ -28,7 +28,9 @@ Route::group([// 'middleware' => 'api', // 'prefix' => 'auth',
     // Route::post('admin', 'AdminController@index');
     Route::post('users', 'UserController@store');
 
+    Route::resource('roles', 'RolController');
 });
+
 
 Route::group([// 
     'middleware' => 'auth:api', // 
