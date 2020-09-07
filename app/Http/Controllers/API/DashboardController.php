@@ -2,63 +2,29 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Buy;
+use App\Client;
 use App\Http\Controllers\Controller;
+use App\Order;
+use App\Product;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    
+
+    public function lastOrders(){
+        $orders = Order::latest()->take(5)->get();
+        return response()->json(['res' => true, 'orders' => $orders], 200);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function countCharts(){
+        $product = Product::all()->count();
+        $buy = Buy::all()->count();
+        $sale = Order::WHERE('state', 'like', '%VEN%')->get()->count();
+        $client = Client::all()->count();
+        return response()->json(['res' => true, 'products' => $product, 'buys' => $buy, 'sales' => $sale, 'clients' => $client], 200);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

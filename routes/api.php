@@ -29,6 +29,8 @@ Route::group([// 'middleware' => 'api', // 'prefix' => 'auth',
     Route::post('users', 'UserController@store');
 
     Route::resource('roles', 'RolController');
+    Route::get('lastOrders', 'DashboardController@lastOrders');
+    Route::get('countCharts', 'DashboardController@countCharts');
 });
 
 
