@@ -31,6 +31,8 @@ Route::group([// 'middleware' => 'api', // 'prefix' => 'auth',
     Route::resource('roles', 'RolController');
     Route::get('lastOrders', 'DashboardController@lastOrders');
     Route::get('countCharts', 'DashboardController@countCharts');
+    Route::post('activate','CategoryController@activate');
+    Route::post('disable','CategoryController@disable');
 });
 
 

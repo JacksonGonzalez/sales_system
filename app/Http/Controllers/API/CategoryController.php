@@ -79,4 +79,22 @@ class CategoryController extends Controller
         Category::destroy($id);
         return response()->json(['res' => true, 'message' => 'Delete OK'], 200);
     }
+
+    public function activate($id)
+    {
+        $category = Category::findOrFail($id);
+        $category->state = '1';
+        $category->save();
+        
+        return response()->json(['res' => true, 'message' => 'Activate OK', 'category' => $category], 200);
+    }
+
+    public function disable($id)
+    {
+        $category = Category::findOrFail($id);
+        $category->state = '0';
+        $category->save();
+        
+        return response()->json(['res' => true, 'message' => 'Disable OK', 'category' => $category], 200);
+    }
 }
