@@ -29,10 +29,13 @@ Route::group([// 'middleware' => 'api', // 'prefix' => 'auth',
     Route::post('users', 'UserController@store');
 
     Route::resource('roles', 'RolController');
+    Route::resource('products', 'ProductController');
     Route::get('lastOrders', 'DashboardController@lastOrders');
     Route::get('countCharts', 'DashboardController@countCharts');
-    Route::post('activate','CategoryController@activate');
-    Route::post('disable','CategoryController@disable');
+    Route::post('activateRol/{id}','CategoryController@activate');
+    Route::post('disableRol/{id}','CategoryController@disable');
+    Route::post('activateProduct/{id}','ProductController@activate');
+    Route::post('disableProduct/{id}','ProductController@disable');
 });
 
 
