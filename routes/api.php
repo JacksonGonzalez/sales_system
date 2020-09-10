@@ -26,14 +26,15 @@ Route::group([// 'middleware' => 'api', // 'prefix' => 'auth',
     // Route::post('refresh', 'AuthController@refresh');
     Route::post('checkToken', 'AuthController@checkToken');
     // Route::post('admin', 'AdminController@index');
-    Route::post('users', 'UserController@store');
+    // Route::post('users', 'UserController@store');
 
     Route::resource('roles', 'RolController');
     Route::resource('products', 'ProductController');
+    Route::resource('users', 'UserController');
     Route::get('lastOrders', 'DashboardController@lastOrders');
     Route::get('countCharts', 'DashboardController@countCharts');
-    Route::post('activateRol/{id}','CategoryController@activate');
-    Route::post('disableRol/{id}','CategoryController@disable');
+    Route::post('activateCategory/{id}','CategoryController@activate');
+    Route::post('disableCategory/{id}','CategoryController@disable');
     Route::post('activateProduct/{id}','ProductController@activate');
     Route::post('disableProduct/{id}','ProductController@disable');
 });

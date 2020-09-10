@@ -14,9 +14,15 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if($request->has('txtBuscar')){
+            $users = User::WHERE('name', 'like', '%'.$request->txtBuscar.'%')
+                    ->orWhere('document_number', 'like', '%'.$request->txtBuscar.'%')->get();
+        }else{
+            $users = User::all();
+        }
+         return response()->json(['res' => true, 'users' => $users], 200);
     }
 
     /**
@@ -27,10 +33,28 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->all();
-        $input['password'] = Hash::make($request->password);
-        User::create($input);
-        return response()->json(['res' => true, 'message' => 'Insert OK', 'user' => $input], 200);
+        $validator = $request->validate([ 
+            'name' => 'required|string|min:3', 
+            'last_name' => 'required|String|min:3',
+            'email' => 'required|email', 
+            'password' => 'required', 
+            'c_password' => 'required|same:password',
+            'idRol' => 'required|String',
+            'document_type' => 'required|String|max:3',
+            'document_number' => 'required|Numeric|min:7',
+            'address' => 'String',
+            'phone' => 'Numeric',
+            'email' => 'required|string',
+            'avatar' => 'String',
+            ]);
+    
+    
+            $input = $request->all(); 
+            $input['password'] = bcrypt($input['password']); 
+            $user = User::create($input); 
+            $success['token'] =  $user->createToken('sales_system')-> accessToken; 
+            $success['user'] =  $user;
+            return response()->json(['success'=>$success], 200); 
 
     }
 
@@ -42,7 +66,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return response()->json(['res' => true, 'user' => $user], 200);
     }
 
     /**
@@ -54,7 +79,24 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = $request->validate([ 
+            'name' => 'required|string|min:3', 
+            'last_name' => 'required|String|min:3',
+            'email' => 'required|email', 
+            'idRol' => 'required|String',
+            'document_type' => 'required|String|max:3',
+            'document_number' => 'required|Numeric|min:7',
+            'address' => 'String',
+            'phone' => 'Numeric',
+            'email' => 'required|string',
+            'avatar' => 'String',
+            ]);
+    
+    
+            $input = $request->all();
+            $user = User::findOrFail($id);
+            $user->update($input);
+            return response()->json(['res' => true, 'message' => 'Update user OK', 'user' => $user], 200);
     }
 
     /**
@@ -65,6 +107,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+        return response()->json(['res' => true, 'message' => 'User Delete OK'], 200);
     }
 }
