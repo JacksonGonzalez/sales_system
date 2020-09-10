@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Supplier;
 use Illuminate\Http\Request;
 
 class SupplierController extends Controller
@@ -12,9 +13,15 @@ class SupplierController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if($request->has('txtBuscar')){
+            $suppliers = Supplier::WHERE('name', 'like', '%'.$request->txtBuscar.'%')
+                    ->orWhere('document_number', 'like', '%'.$request->txtBuscar.'%')->get();
+        }else{
+            $suppliers = Supplier::all();
+        }
+         return response()->json(['res' => true, 'suppliers' => $suppliers], 200);
     }
 
     /**
@@ -25,7 +32,21 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = $request->validate([ 
+            'name' => 'required|string|min:3',
+            'document_type' => 'required|String|max:3',
+            'document_number' => 'required|Numeric|min:7',
+            'address' => 'String',
+            'phone' => 'Numeric',
+            'email' => 'email', 
+            'contact' => 'String',
+            ]);
+    
+    
+            $input = $request->all();
+            $supplier = Supplier::create($input); 
+            $success['supplier'] =  $supplier;
+            return response()->json(['success'=>$success], 200); 
     }
 
     /**
@@ -36,7 +57,8 @@ class SupplierController extends Controller
      */
     public function show($id)
     {
-        //
+        $supplier = Supplier::findOrFail($id);
+        return response()->json(['res' => true, 'supplier' => $supplier], 200);
     }
 
     /**
@@ -48,7 +70,20 @@ class SupplierController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = $request->validate([ 
+            'name' => 'required|string|min:3',
+            'document_type' => 'required|String|max:3',
+            'document_number' => 'required|Numeric|min:7',
+            'address' => 'String',
+            'phone' => 'Numeric',
+            'email' => 'email', 
+            'contact' => 'String',
+            ]);
+
+        $input = $request->all();
+        $supplier = Supplier::findOrFail($id);
+        $supplier->update($input);
+        return response()->json(['res' => true, 'message' => 'Update Supplier OK', 'supplier' => $supplier], 200);
     }
 
     /**
@@ -59,6 +94,7 @@ class SupplierController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Supplier::destroy($id);
+        return response()->json(['res' => true, 'message' => 'Supplier Delete OK'], 200);
     }
 }
