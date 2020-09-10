@@ -32,6 +32,8 @@ Route::group([// 'middleware' => 'api', // 'prefix' => 'auth',
     Route::resource('products', 'ProductController');
     Route::resource('users', 'UserController');
     Route::resource('suppliers', 'SupplierController');
+    Route::resource('clients', 'ClientController');
+    Route::resource('buys', 'BuyController');
     Route::get('lastOrders', 'DashboardController@lastOrders');
     Route::get('countCharts', 'DashboardController@countCharts');
     Route::post('activateCategory/{id}','CategoryController@activate');

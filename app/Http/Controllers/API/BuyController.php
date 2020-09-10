@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Buy;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,14 @@ class BuyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if($request->has('txtBuscar')){
+            $buys = Buy::WHERE('number', 'like', '%'.$request->txtBuscar.'%')->get();
+        }else{
+            $buys = Buy::all();
+        }
+         return response()->json(['res' => true, 'buys' => $buys], 200);
     }
 
     /**
@@ -25,7 +31,18 @@ class BuyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = $request->validate([ 
+            'idSupplier' => 'required|Numeric',
+            'number' => 'required|Numeric',
+            'date_hour' => 'required|date', 
+            'total' => 'Numeric',
+            ]);
+    
+    
+            $input = $request->all();
+            $buy = Buy::create($input); 
+            $success['buy'] =  $buy;
+            return response()->json(['success'=>$success], 200); 
     }
 
     /**
@@ -36,7 +53,8 @@ class BuyController extends Controller
      */
     public function show($id)
     {
-        //
+        $buy = Buy::findOrFail($id);
+        return response()->json(['res' => true, 'buy' => $buy], 200);
     }
 
     /**
@@ -48,7 +66,18 @@ class BuyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = $request->validate([ 
+            'idSupplier' => 'required|Numeric',
+            'number' => 'required|Numeric',
+            'date_hour' => 'required|date', 
+            'total' => 'Numeric',
+            ]);
+
+
+            $input = $request->all();
+            $buy = Buy::findOrFail($id);
+            $buy->update($input);
+            return response()->json(['res' => true, 'message' => 'Update buy OK', 'buy' => $buy], 200);
     }
 
     /**
@@ -59,6 +88,7 @@ class BuyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Buy::destroy($id);
+        return response()->json(['res' => true, 'message' => 'Buy Delete OK'], 200);
     }
 }

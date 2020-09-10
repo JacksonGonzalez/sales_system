@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Client;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,15 @@ class ClientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if($request->has('txtBuscar')){
+            $clients = Client::WHERE('name', 'like', '%'.$request->txtBuscar.'%')
+                    ->orWhere('document_number', 'like', '%'.$request->txtBuscar.'%')->get();
+        }else{
+            $clients = Client::all();
+        }
+         return response()->json(['res' => true, 'clients' => $clients], 200);
     }
 
     /**
@@ -25,7 +32,20 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = $request->validate([ 
+            'name' => 'required|string|min:3',
+            'document_type' => 'required|String|max:3',
+            'document_number' => 'required|Numeric|min:7',
+            'address' => 'String',
+            'phone' => 'Numeric',
+            'email' => 'email', 
+            ]);
+    
+    
+            $input = $request->all();
+            $client = Client::create($input); 
+            $success['client'] =  $client;
+            return response()->json(['success'=>$success], 200); 
     }
 
     /**
@@ -36,7 +56,8 @@ class ClientController extends Controller
      */
     public function show($id)
     {
-        //
+        $client = Client::findOrFail($id);
+        return response()->json(['res' => true, 'client' => $client], 200);
     }
 
     /**
@@ -48,7 +69,20 @@ class ClientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = $request->validate([ 
+            'name' => 'required|string|min:3',
+            'document_type' => 'required|String|max:3',
+            'document_number' => 'required|Numeric|min:7',
+            'address' => 'String',
+            'phone' => 'Numeric',
+            'email' => 'email', 
+            ]);
+    
+    
+            $input = $request->all();
+            $client = Client::findOrFail($id);
+            $client->update($input);
+            return response()->json(['res' => true, 'message' => 'Update client OK', 'client' => $client], 200);
     }
 
     /**
@@ -59,6 +93,7 @@ class ClientController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Client::destroy($id);
+        return response()->json(['res' => true, 'message' => 'Client Delete OK'], 200);
     }
 }
