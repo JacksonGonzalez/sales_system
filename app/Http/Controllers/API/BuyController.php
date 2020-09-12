@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\API;
 
 use App\Buy;
+use App\buy_product;
 use App\Http\Controllers\Controller;
+use App\Product;
 use Illuminate\Http\Request;
 
 class BuyController extends Controller
@@ -78,6 +80,59 @@ class BuyController extends Controller
             $buy = Buy::findOrFail($id);
             $buy->update($input);
             return response()->json(['res' => true, 'message' => 'Update buy OK', 'buy' => $buy], 200);
+    }
+
+
+    public function addProduct(Request $request){
+        $validator = $request->validate([ 
+            'idBuy' => 'required|Numeric',
+            'idProduct' => 'required|Numeric',
+            'quantity' => 'required|Numeric', 
+            'buy_price' => 'required|Numeric',
+        ]);
+
+        $input = $request->all();
+        $buy_product = buy_product::create($input); 
+        $success['buy'] =  $buy_product;
+
+        $quantity = $input['quantity'];
+        $idProduct = $input['idProduct'];
+        $idBuy = $input['idBuy'];
+
+        $product = Product::findOrFail($idProduct);
+        $stock = $product['stock'];
+        $product['stock'] = $quantity + $stock;
+        $product->update();
+
+        
+
+        
+
+        return response()->json(['success'=>$success], 200); 
+
+    }
+
+
+    public function adjustValue(Request $request){
+        // $idProduct = $request['idProduct'];
+        $idBuy = $request['idBuy'];
+        $total = 0;
+        $buysProducts = buy_product::WHERE('idBuy', '=', $idBuy)->get();
+
+        foreach ($buysProducts as $bp) {
+            $cantidad = $bp['quantity'];
+            $precio = $bp['buy_price'];
+
+            $total = ($cantidad * $precio) + $total;
+        }
+        // return $total;
+            
+        $buy = Buy::findOrFail($idBuy);
+        $buy['total'] = $total;
+        $buy->update();
+
+        $success['buy'] =  $buy;
+        return response()->json(['success'=>$success], 200); 
     }
 
     /**

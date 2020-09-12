@@ -36,10 +36,12 @@ Route::group([// 'middleware' => 'api', // 'prefix' => 'auth',
     Route::resource('buys', 'BuyController');
     Route::get('lastOrders', 'DashboardController@lastOrders');
     Route::get('countCharts', 'DashboardController@countCharts');
+    Route::post('adjustValue', 'BuyController@adjustValue');
     Route::post('activateCategory/{id}','CategoryController@activate');
     Route::post('disableCategory/{id}','CategoryController@disable');
     Route::post('activateProduct/{id}','ProductController@activate');
     Route::post('disableProduct/{id}','ProductController@disable');
+    Route::post('addProduct','BuyController@addProduct');
 });
 
 
