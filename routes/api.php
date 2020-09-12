@@ -22,11 +22,11 @@ Route::group([// 'middleware' => 'api', // 'prefix' => 'auth',
 
     Route::post('login', 'AuthController@login');
     Route::post('logout', 'AuthController@logout');
-    Route::post('register', 'AuthController@register');
+    // Route::post('register', 'AuthController@register');
     // Route::post('refresh', 'AuthController@refresh');
     Route::post('checkToken', 'AuthController@checkToken');
     // Route::post('admin', 'AdminController@index');
-    // Route::post('users', 'UserController@store');
+    Route::post('register', 'UserController@store');
 
     Route::resource('roles', 'RolController');
     Route::resource('products', 'ProductController');
@@ -34,6 +34,7 @@ Route::group([// 'middleware' => 'api', // 'prefix' => 'auth',
     Route::resource('suppliers', 'SupplierController');
     Route::resource('clients', 'ClientController');
     Route::resource('buys', 'BuyController');
+    Route::resource('orders', 'OrderController');
     Route::get('lastOrders', 'DashboardController@lastOrders');
     Route::get('countCharts', 'DashboardController@countCharts');
     Route::post('adjustValue', 'BuyController@adjustValue');
@@ -41,7 +42,9 @@ Route::group([// 'middleware' => 'api', // 'prefix' => 'auth',
     Route::post('disableCategory/{id}','CategoryController@disable');
     Route::post('activateProduct/{id}','ProductController@activate');
     Route::post('disableProduct/{id}','ProductController@disable');
-    Route::post('addProduct','BuyController@addProduct');
+    Route::post('addProductBuy','BuyController@addProduct');
+    Route::post('saleOrder','OrderController@saleOrder');
+    Route::post('addProductOrder','OrderController@addProduct');
 });
 
 
