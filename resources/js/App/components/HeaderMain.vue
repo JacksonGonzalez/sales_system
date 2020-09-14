@@ -40,7 +40,7 @@
                 <a class="dropdown-item" href="#"><i class="far fa-cart-arrow-down mr-2"></i> Compras<span class="badge badge-secondary ml-auto">42</span></a>
                 <a class="dropdown-item" href="#"><i class="far fa-money-bill-wave mr-2"></i> Ventas<span class="badge badge-primary ml-auto">42</span></a>
               <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#"><i class="far fa-sign-out-alt mr-2"></i> Salir</a>
+                <button class="dropdown-item" @click="logout"><i class="far fa-sign-out-alt mr-2"></i> Salir</button>
             </div>
           </li>
         </ul>
@@ -49,6 +49,7 @@
     </div>
 </template>
 <script>
+import axios from 'axios';
 
     export default {
         name: 'HeaderMain',
@@ -64,7 +65,41 @@
             
         },
         mounted() {
+            if (this.$store.state.token !== "") {
+              axios.post("/api/checkToken", "",{ headers:{ Authorization: "Bearer "+this.$store.state.token }})
+                .then((res) => {
+                  if (res) {
+                    // this.loading = false;
+                    // this.$router.push("/dashboard");
+                  }
+                })
+                .catch((err) => {
+                  // this.loading = false;
+                  this.$store.commit("clearToken");
+                  this.$router.push("/login");
+              });
+            } else {
             
+              // this.loading = false;
+              this.$store.commit("clearToken");
+              this.$router.push("/login");
+
+            }
+        },
+        methods :{
+            logout(){
+                axios.post('/api/logout', "",{ headers:{ Authorization: "Bearer "+this.$store.state.token }})
+                .then((res) => {
+                if (res) {
+                  // this.loading = false;
+                  this.$store.commit("clearToken");
+                  this.$router.push("/");
+                }
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+            }
         }
     }
 </script>

@@ -226,7 +226,7 @@ import MenuMainVue from './MenuMain.vue';
 import HeaderMainVue from './HeaderMain.vue';
 import FooterMainVue from './FooterMain.vue';
 export default {
-  name: "Panel de Control",
+  name: "Dashboard",
   data() {
     return {
       loading: true,
@@ -239,42 +239,10 @@ export default {
     'footer-main' : FooterMainVue
   },
   mounted() {
-    // if (this.$store.state.token !== "") {
-    //   axios
-    //     .post("/api/checkToken", { token: this.$store.state.token })
-    //     .then((res) => {
-    //       if (res) {
-    //         this.loading = false;
-    //         // this.$router.push("/dashboard");
-    //       }
-    //     })
-    //     .catch((err) => {
-    //       this.loading = false;
-    //       this.$store.commit("clearToken");
-    //       this.$router.push("/login");
-    //     });
-    // } else {
     
-    //   this.loading = false;
-    //   this.$store.commit("clearToken");
-    //   this.$router.push("/login");
-
-    // }
   },
   methods : {
-//       logout(){
-//           axios.post('/api/logout', {token: this.$store.state.token})
-//           .then((res) => {
-//           if (res) {
-//             // this.loading = false;
-//             this.$store.commit("clearToken");
-//             this.$router.push("/");
-//           }
-//         })
-//         .catch((err) => {
-//           console.log(err);
-//         });
-//       }
+      
   }
 };
 </script>
