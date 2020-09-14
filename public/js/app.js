@@ -3183,6 +3183,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'MenuMain',
   data: function data() {
@@ -43096,284 +43098,17 @@ var render = function() {
       _vm._m(0),
       _vm._v(" "),
       _c("ul", { staticClass: "c-sidebar-nav" }, [
-        _c(
-          "li",
-          { staticClass: "c-sidebar-nav-item" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "c-sidebar-nav-link",
-                attrs: { to: "/dashboard" }
-              },
-              [
-                _c("i", {
-                  staticClass: "far fa-tachometer-alt c-sidebar-nav-icon"
-                }),
-                _vm._v(" Panel de Control")
-              ]
-            )
-          ],
-          1
-        ),
+        _vm._m(1),
         _vm._v(" "),
-        _c("li", { staticClass: "c-sidebar-nav-item c-sidebar-nav-dropdown" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c("ul", { staticClass: "c-sidebar-nav-dropdown-items" }, [
-            _c(
-              "li",
-              { staticClass: "c-sidebar-nav-item" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "c-sidebar-nav-link",
-                    attrs: { to: "categorias" }
-                  },
-                  [
-                    _c("span", { staticClass: "c-sidebar-nav-icon" }, [
-                      _c("i", { staticClass: "far fa-tachometer-alt" })
-                    ]),
-                    _vm._v(" Categoria")
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "c-sidebar-nav-item" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "c-sidebar-nav-link",
-                    attrs: { to: "productos" }
-                  },
-                  [
-                    _c("span", { staticClass: "c-sidebar-nav-icon" }, [
-                      _c("i", { staticClass: "far fa-tachometer-alt" })
-                    ]),
-                    _vm._v(" Productos")
-                  ]
-                )
-              ],
-              1
-            )
-          ])
-        ]),
+        _vm._m(2),
         _vm._v(" "),
-        _c("li", { staticClass: "c-sidebar-nav-dropdown" }, [
-          _vm._m(2),
-          _vm._v(" "),
-          _c("ul", { staticClass: "c-sidebar-nav-dropdown-items" }, [
-            _c(
-              "li",
-              { staticClass: "c-sidebar-nav-item" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "c-sidebar-nav-link",
-                    attrs: { to: "ingresos" }
-                  },
-                  [
-                    _c("span", { staticClass: "c-sidebar-nav-icon" }, [
-                      _c("i", { staticClass: "far fa-tachometer-alt" })
-                    ]),
-                    _vm._v(" Ingresos")
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "c-sidebar-nav-item" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "c-sidebar-nav-link",
-                    attrs: { to: "proveedor" }
-                  },
-                  [
-                    _c("span", { staticClass: "c-sidebar-nav-icon" }, [
-                      _c("i", { staticClass: "far fa-tachometer-alt" })
-                    ]),
-                    _vm._v(" Proveedores")
-                  ]
-                )
-              ],
-              1
-            )
-          ])
-        ]),
+        _vm._m(3),
         _vm._v(" "),
-        _c("li", { staticClass: "c-sidebar-nav-dropdown" }, [
-          _vm._m(3),
-          _vm._v(" "),
-          _c("ul", { staticClass: "c-sidebar-nav-dropdown-items" }, [
-            _c(
-              "li",
-              { staticClass: "c-sidebar-nav-item" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "c-sidebar-nav-link",
-                    attrs: { to: "pedidos" }
-                  },
-                  [
-                    _c("span", { staticClass: "c-sidebar-nav-icon" }, [
-                      _c("i", { staticClass: "far fa-tachometer-alt" })
-                    ]),
-                    _vm._v(" Pedidos")
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "c-sidebar-nav-item" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "c-sidebar-nav-link",
-                    attrs: { to: "ventas" }
-                  },
-                  [
-                    _c("span", { staticClass: "c-sidebar-nav-icon" }, [
-                      _c("i", { staticClass: "far fa-tachometer-alt" })
-                    ]),
-                    _vm._v(" Ventas")
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "c-sidebar-nav-item" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "c-sidebar-nav-link",
-                    attrs: { to: "clientes" }
-                  },
-                  [
-                    _c("span", { staticClass: "c-sidebar-nav-icon" }, [
-                      _c("i", { staticClass: "far fa-tachometer-alt" })
-                    ]),
-                    _vm._v(" Clientes")
-                  ]
-                )
-              ],
-              1
-            )
-          ])
-        ]),
+        _vm._m(4),
         _vm._v(" "),
-        _c("li", { staticClass: "c-sidebar-nav-dropdown" }, [
-          _vm._m(4),
-          _vm._v(" "),
-          _c("ul", { staticClass: "c-sidebar-nav-dropdown-items" }, [
-            _c(
-              "li",
-              { staticClass: "c-sidebar-nav-item" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "c-sidebar-nav-link",
-                    attrs: { to: "usuarios" }
-                  },
-                  [
-                    _c("span", { staticClass: "c-sidebar-nav-icon" }, [
-                      _c("i", { staticClass: "far fa-tachometer-alt" })
-                    ]),
-                    _vm._v(" Usuarios")
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "c-sidebar-nav-item" },
-              [
-                _c(
-                  "router-link",
-                  { staticClass: "c-sidebar-nav-link", attrs: { to: "roles" } },
-                  [
-                    _c("span", { staticClass: "c-sidebar-nav-icon" }, [
-                      _c("i", { staticClass: "far fa-tachometer-alt" })
-                    ]),
-                    _vm._v(" Roles")
-                  ]
-                )
-              ],
-              1
-            )
-          ])
-        ]),
+        _vm._m(5),
         _vm._v(" "),
-        _c("li", { staticClass: "c-sidebar-nav-dropdown" }, [
-          _vm._m(5),
-          _vm._v(" "),
-          _c("ul", { staticClass: "c-sidebar-nav-dropdown-items" }, [
-            _c(
-              "li",
-              { staticClass: "c-sidebar-nav-item" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "c-sidebar-nav-link",
-                    attrs: { to: "reporte-ingreso" }
-                  },
-                  [
-                    _c("span", { staticClass: "c-sidebar-nav-icon" }, [
-                      _c("i", { staticClass: "far fa-tachometer-alt" })
-                    ]),
-                    _vm._v(" Ingresos")
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "c-sidebar-nav-item" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "c-sidebar-nav-link",
-                    attrs: { to: "reporte-ventas" }
-                  },
-                  [
-                    _c("span", { staticClass: "c-sidebar-nav-icon" }, [
-                      _c("i", { staticClass: "far fa-tachometer-alt" })
-                    ]),
-                    _vm._v(" Ventas")
-                  ]
-                )
-              ],
-              1
-            )
-          ])
-        ]),
+        _vm._m(6),
         _vm._v(" "),
         _c(
           "li",
@@ -43386,9 +43121,7 @@ var render = function() {
                 attrs: { to: "dashboard", target: "_top" }
               },
               [
-                _c("i", {
-                  staticClass: "far fa-tachometer-alt c-sidebar-nav-icon"
-                }),
+                _c("i", { staticClass: "far fa-book c-sidebar-nav-icon" }),
                 _vm._v(" Manual Usuario")
               ]
             )
@@ -43408,7 +43141,7 @@ var render = function() {
               },
               [
                 _c("i", {
-                  staticClass: "far fa-tachometer-alt c-sidebar-nav-icon"
+                  staticClass: "far fa-address-card c-sidebar-nav-icon"
                 }),
                 _vm._v(" Contactenos")
               ]
@@ -43463,69 +43196,261 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "c-sidebar-nav-link c-sidebar-nav-dropdown-toggle",
-        attrs: { href: "#" }
-      },
-      [
-        _c("i", { staticClass: "far fa-tachometer-alt c-sidebar-nav-icon" }),
-        _vm._v(" Almacen")
-      ]
-    )
+    return _c("li", { staticClass: "c-sidebar-nav-item" }, [
+      _c(
+        "a",
+        { staticClass: "c-sidebar-nav-link", attrs: { href: "/dashboard" } },
+        [
+          _c("span", { staticClass: "c-sidebar-nav-icon" }, [
+            _c("i", { staticClass: "far fa-tachometer-alt" })
+          ]),
+          _vm._v(" Panel de Control")
+        ]
+      )
+    ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      { staticClass: "c-sidebar-nav-dropdown-toggle", attrs: { href: "#" } },
-      [
-        _c("i", { staticClass: "far fa-tachometer-alt c-sidebar-nav-icon" }),
-        _vm._v(" Compras")
-      ]
-    )
+    return _c("li", { staticClass: "c-sidebar-nav-dropdown" }, [
+      _c(
+        "a",
+        {
+          staticClass: "c-sidebar-nav-link c-sidebar-nav-dropdown-toggle",
+          attrs: { href: "#" }
+        },
+        [
+          _c("i", { staticClass: "far fa-warehouse c-sidebar-nav-icon" }),
+          _vm._v(" Almacen")
+        ]
+      ),
+      _vm._v(" "),
+      _c("ul", { staticClass: "c-sidebar-nav-dropdown-items" }, [
+        _c("li", { staticClass: "c-sidebar-nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "c-sidebar-nav-link",
+              attrs: { href: "/categorias" }
+            },
+            [
+              _c("span", { staticClass: "c-sidebar-nav-icon" }, [
+                _c("i", { staticClass: "far fa-tags" })
+              ]),
+              _vm._v(" Categorias")
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "c-sidebar-nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "c-sidebar-nav-link",
+              attrs: { href: "/productos" }
+            },
+            [
+              _c("span", { staticClass: "c-sidebar-nav-icon" }, [
+                _c("i", { staticClass: "far fa-box" })
+              ]),
+              _vm._v(" Productos")
+            ]
+          )
+        ])
+      ])
+    ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      { staticClass: "c-sidebar-nav-dropdown-toggle", attrs: { href: "#" } },
-      [
-        _c("i", { staticClass: "far fa-tachometer-alt c-sidebar-nav-icon" }),
-        _vm._v(" Ventas")
-      ]
-    )
+    return _c("li", { staticClass: "c-sidebar-nav-dropdown" }, [
+      _c(
+        "a",
+        { staticClass: "c-sidebar-nav-dropdown-toggle", attrs: { href: "#" } },
+        [
+          _c("i", { staticClass: "far fa-shopping-cart c-sidebar-nav-icon" }),
+          _vm._v(" Compras")
+        ]
+      ),
+      _vm._v(" "),
+      _c("ul", { staticClass: "c-sidebar-nav-dropdown-items" }, [
+        _c("li", { staticClass: "c-sidebar-nav-item" }, [
+          _c(
+            "a",
+            { staticClass: "c-sidebar-nav-link", attrs: { href: "/ingresos" } },
+            [
+              _c("span", { staticClass: "c-sidebar-nav-icon" }, [
+                _c("i", { staticClass: "far fa-ticket" })
+              ]),
+              _vm._v(" Ingresos")
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "c-sidebar-nav-item" }, [
+          _c(
+            "a",
+            { staticClass: "c-sidebar-nav-link", attrs: { href: "proveedor" } },
+            [
+              _c("span", { staticClass: "c-sidebar-nav-icon" }, [
+                _c("i", { staticClass: "far fa-user-tie" })
+              ]),
+              _vm._v(" Proveedores")
+            ]
+          )
+        ])
+      ])
+    ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      { staticClass: "c-sidebar-nav-dropdown-toggle", attrs: { href: "#" } },
-      [
-        _c("i", { staticClass: "far fa-tachometer-alt c-sidebar-nav-icon" }),
-        _vm._v(" Acceso")
-      ]
-    )
+    return _c("li", { staticClass: "c-sidebar-nav-dropdown" }, [
+      _c(
+        "a",
+        { staticClass: "c-sidebar-nav-dropdown-toggle", attrs: { href: "#" } },
+        [
+          _c("i", { staticClass: "far fa-cart-arrow-down c-sidebar-nav-icon" }),
+          _vm._v(" Ventas")
+        ]
+      ),
+      _vm._v(" "),
+      _c("ul", { staticClass: "c-sidebar-nav-dropdown-items" }, [
+        _c("li", { staticClass: "c-sidebar-nav-item" }, [
+          _c(
+            "a",
+            { staticClass: "c-sidebar-nav-link", attrs: { href: "pedidos" } },
+            [
+              _c("span", { staticClass: "c-sidebar-nav-icon" }, [
+                _c("i", { staticClass: "far fa-check" })
+              ]),
+              _vm._v(" Pedidos")
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "c-sidebar-nav-item" }, [
+          _c(
+            "a",
+            { staticClass: "c-sidebar-nav-link", attrs: { href: "ventas" } },
+            [
+              _c("span", { staticClass: "c-sidebar-nav-icon" }, [
+                _c("i", { staticClass: "far fa-chart-pie-alt" })
+              ]),
+              _vm._v(" Ventas")
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "c-sidebar-nav-item" }, [
+          _c(
+            "a",
+            { staticClass: "c-sidebar-nav-link", attrs: { href: "clientes" } },
+            [
+              _c("span", { staticClass: "c-sidebar-nav-icon" }, [
+                _c("i", { staticClass: "far fa-users" })
+              ]),
+              _vm._v(" Clientes")
+            ]
+          )
+        ])
+      ])
+    ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      { staticClass: "c-sidebar-nav-dropdown-toggle", attrs: { href: "#" } },
-      [
-        _c("i", { staticClass: "far fa-tachometer-alt c-sidebar-nav-icon" }),
-        _vm._v(" Reportes")
-      ]
-    )
+    return _c("li", { staticClass: "c-sidebar-nav-dropdown" }, [
+      _c(
+        "a",
+        { staticClass: "c-sidebar-nav-dropdown-toggle", attrs: { href: "#" } },
+        [
+          _c("i", { staticClass: "far fa-file-contract c-sidebar-nav-icon" }),
+          _vm._v(" Acceso")
+        ]
+      ),
+      _vm._v(" "),
+      _c("ul", { staticClass: "c-sidebar-nav-dropdown-items" }, [
+        _c("li", { staticClass: "c-sidebar-nav-item" }, [
+          _c(
+            "a",
+            { staticClass: "c-sidebar-nav-link", attrs: { href: "usuarios" } },
+            [
+              _c("span", { staticClass: "c-sidebar-nav-icon" }, [
+                _c("i", { staticClass: "far fa-user" })
+              ]),
+              _vm._v(" Usuarios")
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "c-sidebar-nav-item" }, [
+          _c(
+            "a",
+            { staticClass: "c-sidebar-nav-link", attrs: { href: "roles" } },
+            [
+              _c("span", { staticClass: "c-sidebar-nav-icon" }, [
+                _c("i", { staticClass: "far fa-lock-open" })
+              ]),
+              _vm._v(" Roles")
+            ]
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "c-sidebar-nav-dropdown" }, [
+      _c(
+        "a",
+        { staticClass: "c-sidebar-nav-dropdown-toggle", attrs: { href: "#" } },
+        [
+          _c("i", { staticClass: "far fa-file-chart-pie c-sidebar-nav-icon" }),
+          _vm._v(" Reportes")
+        ]
+      ),
+      _vm._v(" "),
+      _c("ul", { staticClass: "c-sidebar-nav-dropdown-items" }, [
+        _c("li", { staticClass: "c-sidebar-nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "c-sidebar-nav-link",
+              attrs: { href: "reporte-ingreso" }
+            },
+            [
+              _c("span", { staticClass: "c-sidebar-nav-icon" }, [
+                _c("i", { staticClass: "far fa-file-chart-line" })
+              ]),
+              _vm._v(" Ingresos")
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "c-sidebar-nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "c-sidebar-nav-link",
+              attrs: { href: "reporte-ventas" }
+            },
+            [
+              _c("span", { staticClass: "c-sidebar-nav-icon" }, [
+                _c("i", { staticClass: "far fa-file-chart-pie" })
+              ]),
+              _vm._v(" Ventas")
+            ]
+          )
+        ])
+      ])
+    ])
   }
 ]
 render._withStripped = true
