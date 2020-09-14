@@ -37,8 +37,8 @@
               <div class="dropdown-header bg-light py-2"><strong>Cuenta</strong></div>
                 <a class="dropdown-item" href="#"><i class="far fa-user-circle mr-2"></i> Perfil</a>
                 <a class="dropdown-item" href="#"><i class="far fa-cog mr-2"></i> Configuraciones</a>
-                <a class="dropdown-item" href="#"><i class="far fa-cart-arrow-down mr-2"></i> Compras<span class="badge badge-secondary ml-auto">42</span></a>
-                <a class="dropdown-item" href="#"><i class="far fa-money-bill-wave mr-2"></i> Ventas<span class="badge badge-primary ml-auto">42</span></a>
+                <router-link to="ingresos" class="dropdown-item"><i class="far fa-cart-arrow-down mr-2"></i> Compras<span class="badge badge-secondary ml-auto">42</span></router-link>
+                <router-link to="ventas" class="dropdown-item" href="#"><i class="far fa-money-bill-wave mr-2"></i> Ventas<span class="badge badge-primary ml-auto">42</span></router-link>
               <div class="dropdown-divider"></div>
                 <button class="dropdown-item" @click="logout"><i class="far fa-sign-out-alt mr-2"></i> Salir</button>
             </div>

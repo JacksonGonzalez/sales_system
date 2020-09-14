@@ -28,6 +28,16 @@ Route::group([// 'middleware' => 'api', // 'prefix' => 'auth',
     // Route::post('admin', 'AdminController@index');
     Route::post('register', 'UserController@store');
 
+    
+});
+
+
+Route::group([// 
+    'middleware' => 'auth:api', // 
+    'prefix' => 'admin',
+    'namespace' => 'api'], function () {
+
+    Route::resource('categories', 'CategoryController');
     Route::resource('roles', 'RolController');
     Route::resource('products', 'ProductController');
     Route::resource('users', 'UserController');
@@ -45,14 +55,4 @@ Route::group([// 'middleware' => 'api', // 'prefix' => 'auth',
     Route::post('addProductBuy','BuyController@addProduct');
     Route::post('saleOrder','OrderController@saleOrder');
     Route::post('addProductOrder','OrderController@addProduct');
-});
-
-
-Route::group([// 
-    'middleware' => 'auth:api', // 
-    'prefix' => 'admin',
-    'namespace' => 'api'], function () {
-
-    Route::resource('categories', 'CategoryController');
-
 });

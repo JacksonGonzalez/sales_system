@@ -41899,13 +41899,13 @@ var staticRenderFns = [
     return _c("div", [
       _c("footer", { staticClass: "c-footer" }, [
         _c("div", [
-          _c("a", { attrs: { href: "https://coreui.io" } }, [_vm._v("CoreUI")]),
-          _vm._v(" © 2020 creativeLabs.")
+          _c("a", { attrs: { href: "#" } }, [_vm._v("SALES SYSTEM")]),
+          _vm._v(" © 2020 Sistema de Gestion de compras y ventas de productos.")
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "ml-auto" }, [
-          _vm._v("Powered by "),
-          _c("a", { attrs: { href: "https://coreui.io/" } }, [_vm._v("CoreUI")])
+          _vm._v("Editado por "),
+          _c("a", { attrs: { href: "#" } }, [_vm._v("JAESGOCA")])
         ])
       ])
     ])
@@ -41971,9 +41971,34 @@ var render = function() {
                 _vm._v(" "),
                 _vm._m(9),
                 _vm._v(" "),
-                _vm._m(10),
+                _c(
+                  "router-link",
+                  { staticClass: "dropdown-item", attrs: { to: "ingresos" } },
+                  [
+                    _c("i", { staticClass: "far fa-cart-arrow-down mr-2" }),
+                    _vm._v(" Compras"),
+                    _c(
+                      "span",
+                      { staticClass: "badge badge-secondary ml-auto" },
+                      [_vm._v("42")]
+                    )
+                  ]
+                ),
                 _vm._v(" "),
-                _vm._m(11),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "dropdown-item",
+                    attrs: { to: "ventas", href: "#" }
+                  },
+                  [
+                    _c("i", { staticClass: "far fa-money-bill-wave mr-2" }),
+                    _vm._v(" Ventas"),
+                    _c("span", { staticClass: "badge badge-primary ml-auto" }, [
+                      _vm._v("42")
+                    ])
+                  ]
+                ),
                 _vm._v(" "),
                 _c("div", { staticClass: "dropdown-divider" }),
                 _vm._v(" "),
@@ -41985,7 +42010,8 @@ var render = function() {
                     _vm._v(" Salir")
                   ]
                 )
-              ]
+              ],
+              1
             )
           ])
         ])
@@ -42123,28 +42149,6 @@ var staticRenderFns = [
     return _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
       _c("i", { staticClass: "far fa-cog mr-2" }),
       _vm._v(" Configuraciones")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
-      _c("i", { staticClass: "far fa-cart-arrow-down mr-2" }),
-      _vm._v(" Compras"),
-      _c("span", { staticClass: "badge badge-secondary ml-auto" }, [
-        _vm._v("42")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
-      _c("i", { staticClass: "far fa-money-bill-wave mr-2" }),
-      _vm._v(" Ventas"),
-      _c("span", { staticClass: "badge badge-primary ml-auto" }, [_vm._v("42")])
     ])
   }
 ]
